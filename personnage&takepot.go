@@ -51,7 +51,7 @@ func (p Perso) DisplayInventory() {
 }
 func (p *Perso) takePot() {
 	for _, lettre := range p.inv {
-		if lettre == "potion de vie" && p.pv <= p.pva-50 {
+		if lettre == "potion de vie" && p.pv <= p.pv-50 {
 			p.pv += 50
 		}
 	}

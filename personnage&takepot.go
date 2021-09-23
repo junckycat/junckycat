@@ -27,7 +27,7 @@ func main() {
 	p1.DisplayInfo()
 	fmt.Println("----------------")
 	var p2 Perso
-	p2.Init("raider", "viking", []string{"hache,", "potion de"}, 1, 1500, 300)
+	p2.Init("raider", "viking", []string{"hache,", "potion de vie"}, 1, 1500, 300)
 	p2.DisplayInfo()
 	fmt.Println("----------------")
 
@@ -53,6 +53,7 @@ func (p *Perso) takePot() {
 	for _, lettre := range p.inv {
 		if lettre == "potion de vie" && p.pv <= p.pv-50 {
 			p.pv += 50
+			p.inv[len(p.inv)-1] = ""
 		}
 	}
 }

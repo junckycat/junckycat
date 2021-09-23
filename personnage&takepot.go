@@ -27,7 +27,7 @@ func main() {
 	p1.DisplayInfo()
 	fmt.Println("----------------")
 	var p2 Perso
-	p2.Init("raider", "viking", []string{"hache,", "potion"}, 1, 1500, 300)
+	p2.Init("raider", "viking", []string{"hache,", "potion de"}, 1, 1500, 300)
 	p2.DisplayInfo()
 	fmt.Println("----------------")
 
@@ -41,18 +41,18 @@ func (p Perso) DisplayInfo() {
 	fmt.Println("point de vie :", p.pv)
 	fmt.Println("inventaire :", p.inv)
 }
-func (p ) DisplayInventory() {
-    if len(p.inv) == 0 {
-        fmt.Println("inventaire vide")
-    }
-    for i := 0; i < len(p.inv); i++ {
-        fmt.Println("->", p.inv[i], "x1")
-    }
+func (p Perso) DisplayInventory() {
+	if len(p.inv) == 0 {
+		fmt.Println("inventaire vide")
+	}
+	for i := 0; i < len(p.inv); i++ {
+		fmt.Println("->", p.inv[i], "x1")
+	}
 }
-func (p *) takePot() {
-    for _, lettre := range p.inv {
-        if lettre == "potion de vie" && p.pv <= p.pvmax-50 {
-            p.pv += 50
-        }
-    }
+func (p *Perso) takePot() {
+	for _, lettre := range p.inv {
+		if lettre == "potion de vie" && p.pv <= p.pva-50 {
+			p.pv += 50
+		}
+	}
 }

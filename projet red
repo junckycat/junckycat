@@ -146,4 +146,3 @@ func (p *Perso) PoisonPot(item string) {
 func (p *Perso) RemoveInventory(item string) {
 	p.inventaire = Remove(p.inventaire, item)
 }
-

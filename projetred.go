@@ -7,7 +7,32 @@ import (
 func main() {
 
 func bienvenue(bvn string, ch1 int, ch2 int) {
-	fmt.Println("Bienvenue sur forhonor Golang!")
+	fmt.Println("
+	
+     ______                                                  
+    | ___ (_)                                                 
+    | |_/ /_  ___ _ ____   _____ _ __  _   _  ___             
+    | ___ \ |/ _ \ '_ \ \ / / _ \ '_ \| | | |/ _ \            
+    | |_/ / |  __/ | | \ V /  __/ | | | |_| |  __/            
+    \____/|_|\___|_| |_|\_/ \___|_| |_|\__,_|\___|            
+                                                          
+                                                          
+                                                          
+                                                          
+                    ___ _   _ _ __                          
+                   / __| | | | '__|                         
+                   \__ \ |_| | |                            
+                   |___/\__,_|_|                            
+                                                          
+                                                          
+______ ___________     _   _ _____ _   _  _   _ ___________ 
+|  ___|  _  | ___ \   | | | |  _  | \ | || \ | |  _  | ___ \
+| |_  | | | | |_/ /   | |_| | | | |  \| ||  \| | | | | |_/ /
+|  _| | | | |    /    |  _  | | | | . ` || . ` | | | |    / 
+| |   \ \_/ / |\ \    | | | \ \_/ / |\  || |\  \ \_/ / |\ \ 
+\_|    \___/\_| \_|   \_| |_/\___/\_| \_/\_| \_/\___/\_| \_|
+                                                          
+                                                          ")
 }
 
 type Perso struct {
@@ -31,13 +56,13 @@ func (c *Perso) Init(nom string, class string, inv []string, niveau int, pv int,
 func perso() {
 	var p1 Perso
 	p1.Init("oroshi", "Samurai", []string{"Sabre", "Bouclier"}, 1, 1000, 150)
-	fmt.Println("----------------")
+	fmt.Println("/_____/_____/_____/_____/_____/_____/_____/_____/")
 	p1.DisplayInfo()
-	fmt.Println("----------------")
+	fmt.Println("/_____/_____/_____/_____/_____/_____/_____/_____/")
 	var p2 Perso
 	p2.Init("raider", "viking", []string{"Hache,", "Potion de vie"}, 1, 1500, 300)
 	p2.DisplayInfo()
-	fmt.Println("----------------")
+	fmt.Println("")
 }
 
 func (p Perso) DisplayInfo() {
@@ -70,13 +95,13 @@ func Bienvenue() {
 	var p1 Perso
 	fmt.Println("Bienvenue sur for honor golang!")
 	p1.Init("oroshi", "Samurai", []string{"sabre", "bouclier"}, 1, 1000, 150)
-	fmt.Println("----------------")
+	fmt.Println("/_____/_____/_____/_____/_____/_____/_____/_____/")
 	fmt.Println("Personnage 1 :\nNom :", p1.nom, "\nClasse :", p1.classe)
-	fmt.Println("----------------")
+	fmt.Println("/_____/_____/_____/_____/_____/_____/_____/_____/")
 	var p2 Perso
 	p2.Init("raider", "viking", []string{"hache", "potion"}, 1, 1500, 300)
 	fmt.Println("Personnage 2 :\nNom :", p2.nom, "\nClasse", p2.classe)
-	fmt.Println("----------------")
+	fmt.Println("/_____/_____/_____/_____/_____/_____/_____/_____/")
 	choice := 1
 	var pc Perso
 	if choice == 1 {
@@ -86,9 +111,9 @@ func Bienvenue() {
 	}
 	fmt.Println("Vous avez choisi le personnage :")
 	fmt.Println("Nom :", pc.nom, "\nClasse :", pc.classe)
-	fmt.Println("---------------")
+	fmt.Println("/_____/_____/_____/_____/_____/_____/_____/_____/")
 	fmt.Println("Menu")
-	fmt.Println("---------------")
+	fmt.Println("/_____/_____/_____/_____/_____/_____/_____/_____/")
 	fmt.Println("1 : Afficher les caratÃ©ristiques")
 	fmt.Println("2 : Afficher l'inventaire du personnage")
 	fmt.Println("3 : Afficher le marcher du IA")
@@ -124,14 +149,15 @@ func (p *Perso) dead() {
 
 func (p *Perso)marchand() {
     fmt.Println("1 : potion de soin (+50 HP)")
-	p.addinventory("Potion de soin")
 	fmt.Println("2 : potion de poison ( -10 hp par seconde pendant 3 secondes")
+	fmt.Println("si le joueur tape 1")
+	p.addinventory("potion de soin ")
+	fmt.Println("si le joueur tape 2")
 	p.addinventory("potion de poison")
 }
 
 func (p *Perso) addinventory(item string) {
-	p.inventaire = append(p.inventaire, item)
-   }
+	p.inv = append(p.inv, item)
 }
 
 func (p *Perso) PoisonPot(item string) {

@@ -4,7 +4,8 @@ import (
 	"fmt"
 )
 
-func bienvenu(bvn string, ch1 int, ch2 int) {
+func main() {
+func bienvenue(bvn string, ch1 int, ch2 int) {
 	fmt.Println("Bienvenue sur forhonor Golang!")
 }
 
@@ -107,4 +108,16 @@ func Bienvenue() {
 	case 5:
 		fmt.Println("Quitter le jeux")
 	}
+}
+
+func Menu() {
+}
+
+func (p *Perso) dead() {
+	if p.pva <= 0 {
+		p.pva = p.pv / 2
+		fmt.Println("Vous etes mort, vous réaparaissait avec la moitié de vos points de vies")
+		Menu()
+	}
+}
 }

@@ -60,7 +60,7 @@ func perso() {
 	p1.DisplayInfo()
 	fmt.Println("/_____/_____/_____/_____/_____/_____/_____/_____/")
 	var p2 Perso
-	p2.Init("raider", "viking", []string{"Hache,", "Potion de vie"}, 1, 1500, 300)
+	p2.Init("raider", "viking", []string{"hache,", "potion de vie"}, 1, 1500, 300)
 	p2.DisplayInfo()
 	fmt.Println("")
 }
@@ -154,6 +154,8 @@ func (p *Perso)marchand() {
 	p.addinventory("potion de soin ")
 	fmt.Println("si le joueur tape 2")
 	p.addinventory("potion de poison")
+	fmt.Println("3 : Livre de sorts")
+	p.addinventory("Livre de sorts")
 }
 
 func (p *Perso) addinventory(item string) {

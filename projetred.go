@@ -5,13 +5,9 @@ import (
 )
 
 func main() {
-
+}
 func bienvenue(bvn string, ch1 int, ch2 int) {
-<<<<<<< HEAD
-
-	fmt.Println("Bienvenue sur forhonor Golang!")
-=======
-	fmt.Println("
+	fmt.Println(`
 	
      ______                                                  
     | ___ (_)                                                 
@@ -32,12 +28,11 @@ func bienvenue(bvn string, ch1 int, ch2 int) {
 ______ ___________     _   _ _____ _   _  _   _ ___________ 
 |  ___|  _  | ___ \   | | | |  _  | \ | || \ | |  _  | ___ \
 | |_  | | | | |_/ /   | |_| | | | |  \| ||  \| | | | | |_/ /
-|  _| | | | |    /    |  _  | | | | . ` || . ` | | | |    / 
+|  _| | | | |    /    |  _  | | | | .  || .  | | | |    / 
 | |   \ \_/ / |\ \    | | | \ \_/ / |\  || |\  \ \_/ / |\ \ 
 \_|    \___/\_| \_|   \_| |_/\___/\_| \_/\_| \_/\___/\_| \_|
                                                           
-                                                          ")
->>>>>>> 9f3246546bd56620179d982b01f06afcb4953d59
+                                                          `)
 }
 
 type Perso struct {
@@ -62,13 +57,9 @@ func (c *Perso) Init(nom string, class string, inv []string, niveau int, pv int,
 
 func perso() {
 	var p1 Perso
-<<<<<<< HEAD
+
 	p1.Init("oroshi", "Samurai", []string{" Sabre, bouclier - Sorts : Coup de Poing"}, 1, 1000, 150)
-	fmt.Println("----------------")
-=======
-	p1.Init("oroshi", "Samurai", []string{"Sabre", "Bouclier"}, 1, 1000, 150)
 	fmt.Println("/_____/_____/_____/_____/_____/_____/_____/_____/")
->>>>>>> 9f3246546bd56620179d982b01f06afcb4953d59
 	p1.DisplayInfo()
 	fmt.Println("/_____/_____/_____/_____/_____/_____/_____/_____/")
 	var p2 Perso
@@ -106,15 +97,9 @@ func (p *Perso) takePot() {
 
 func Bienvenue() {
 	var p1 Perso
-<<<<<<< HEAD
 	fmt.Println("Bienvenue sur For Honor Golang!")
-	p1.Init("Oroshi", "Samurai", []string{"Sabre", "Bouclier"}, 1, 1000, 150)
-	fmt.Println("----------------")
-=======
-	fmt.Println("Bienvenue sur for honor golang!")
 	p1.Init("oroshi", "Samurai", []string{"sabre", "bouclier"}, 1, 1000, 150)
 	fmt.Println("/_____/_____/_____/_____/_____/_____/_____/_____/")
->>>>>>> 9f3246546bd56620179d982b01f06afcb4953d59
 	fmt.Println("Personnage 1 :\nNom :", p1.nom, "\nClasse :", p1.classe)
 	fmt.Println("/_____/_____/_____/_____/_____/_____/_____/_____/")
 	var p2 Perso
@@ -167,7 +152,7 @@ func (p *Perso) dead() {
 }
 
 func (p *Perso)marchand() {
-	if choice == 2
+	if choice == 2 {
     fmt.Println("1 : potion de soin (+50 HP)")
 	fmt.Println("2 : potion de poison ( -10 hp par seconde pendant 3 secondes")
 	fmt.Println("si le joueur tape 1")

@@ -30,12 +30,12 @@ func (c *Perso) Init(nom string, class string, inv []string, niveau int, pv int,
 
 func perso() {
 	var p1 Perso
-	p1.Init("oroshi", "Samurai", []string{"", ""}, 1, 1000, 150)
+	p1.Init("oroshi", "Samurai", []string{"Sabre", "Bouclier"}, 1, 1000, 150)
 	fmt.Println("----------------")
 	p1.DisplayInfo()
 	fmt.Println("----------------")
 	var p2 Perso
-	p2.Init("raider", "viking", []string{"hache,", "potion de vie"}, 1, 1500, 300)
+	p2.Init("raider", "viking", []string{"Hache,", "Potion de vie"}, 1, 1500, 300)
 	p2.DisplayInfo()
 	fmt.Println("----------------")
 }

@@ -6,7 +6,7 @@ import (
 
 func main() {
 
-func bienvenu(bvn string, ch1 int, ch2 int) {
+func bienvenue(bvn string, ch1 int, ch2 int) {
 
 	fmt.Println("Bienvenue sur forhonor Golang!")
 }
@@ -18,6 +18,7 @@ type Perso struct {
 	pv     int
 	pva    int
 	inv    []string
+	skill []string 
 }
 
 func (c *Perso) Init(nom string, class string, inv []string, niveau int, pv int, pva int) {
@@ -27,16 +28,17 @@ func (c *Perso) Init(nom string, class string, inv []string, niveau int, pv int,
 	c.pv = pv
 	c.pva = pva
 	c.inv = inv
+	c.skill = skill 
 }
 
 func perso() {
 	var p1 Perso
-	p1.Init("oroshi", "Samurai", []string{"", ""}, 1, 1000, 150)
+	p1.Init("oroshi", "Samurai", []string{" Sabre, bouclier - Sorts : Coup de Poing"}, 1, 1000, 150)
 	fmt.Println("----------------")
 	p1.DisplayInfo()
 	fmt.Println("----------------")
 	var p2 Perso
-	p2.Init("raider", "viking", []string{"hache,", "potion de vie"}, 1, 1500, 300)
+	p2.Init("raider", "viking", []string{" Hache,", "Potion de soin - Sorts : Coup de Poing"}, 1, 1500, 300)
 	p2.DisplayInfo()
 	fmt.Println("----------------")
 }
@@ -48,6 +50,7 @@ func (p Perso) DisplayInfo() {
 	fmt.Println("point de vie actuel :", p.pva)
 	fmt.Println("point de vie :", p.pv)
 	fmt.Println("inventaire :", p.inv)
+	fmt.Println("Sorts :", p.skill)
 }
 
 func (p Perso) DisplayInventory() {
@@ -60,7 +63,7 @@ func (p Perso) DisplayInventory() {
 }
 func (p *Perso) takePot() {
 	for _, lettre := range p.inv {
-		if lettre == "potion de vie" && p.pv <= p.pv-50 {
+		if lettre == "potion de soin" && p.pv <= p.pv-50 {
 			p.pv += 50
 			p.inv[len(p.inv)-1] = ""
 		}
@@ -69,13 +72,13 @@ func (p *Perso) takePot() {
 
 func Bienvenue() {
 	var p1 Perso
-	fmt.Println("Bienvenue sur for honor golang!")
-	p1.Init("oroshi", "Samurai", []string{"sabre", "bouclier"}, 1, 1000, 150)
+	fmt.Println("Bienvenue sur For Honor Golang!")
+	p1.Init("Oroshi", "Samurai", []string{"Sabre", "Bouclier"}, 1, 1000, 150)
 	fmt.Println("----------------")
 	fmt.Println("Personnage 1 :\nNom :", p1.nom, "\nClasse :", p1.classe)
 	fmt.Println("----------------")
 	var p2 Perso
-	p2.Init("raider", "viking", []string{"hache", "potion"}, 1, 1500, 300)
+	p2.Init("raider", "viking", []string{"hache", "Potion de soin"}, 1, 1500, 300)
 	fmt.Println("Personnage 2 :\nNom :", p2.nom, "\nClasse", p2.classe)
 	fmt.Println("----------------")
 	choice := 1
@@ -124,6 +127,7 @@ func (p *Perso) dead() {
 }
 
 func (p *Perso)marchand() {
+	if choice == 2
     fmt.Println("1 : potion de soin (+50 HP)")
 	p.addinventory("Potion de soin")
 	fmt.Println("2 : potion de poison (-30 HP)")
@@ -149,4 +153,8 @@ func (p *Perso) PoisonPot(item string) {
 
 func (p *Perso) RemoveInventory(item string) {
 	p.inventaire = Remove(p.inventaire, item)
+}
+
+func (*P Perso) spellbook(skill []string){
+append(c.skill, "Boule de feu" )
 }

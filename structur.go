@@ -91,6 +91,16 @@ func (p Perso) DisplayInfo() {
 	fmt.Println("inventaire :", p.inv)
 
 }
+func (p *Perso) marchand() {
+	fmt.Println("1 : Potion de soin (+50 HP)")
+	p.addinventory("Potion de soin")
+	fmt.Println("1 : Potion de poison (-30 HP)")
+	p.addinventory("Potion de poison")
+}
+
+func (p *Perso) addinventory(item string) {
+	p.inv = append(p.inv, item)
+}
 
 // func Menu() {
 // 	fmt.Println("Entrez votre nom")

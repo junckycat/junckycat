@@ -50,36 +50,39 @@ func main() {
 	} else if choice == "2" {
 		pc.Init(p2.nom, p2.classe, p2.inv, p2.niveau, p2.pv, p2.pva)
 	} else {
-		fmt.Println("Veuillez tapez 1 ou 2")
+
 	}
 	fmt.Println("Vous avez choisi le personnage :")
 	fmt.Println("Nom :", pc.nom, "\nClasse :", pc.classe)
-	fmt.Println("===============")
-	fmt.Println("Menu")
-	fmt.Println("===============")
-	fmt.Println("1 : Afficher les caratéristiques")
-	fmt.Println("2 : Afficher l'inventaire du personnage")
-	fmt.Println("3 : Afficher le marché du IA")
-	fmt.Println("4 : Combattre le IA")
-	fmt.Println("5 : Quitter le jeu")
-	scanner1 := bufio.NewScanner(os.Stdin)
-	scanner1.Scan()
-	menuChoice := scanner1.Text()
-	switch menuChoice {
-	case "1":
-		pc.DisplayInfo()
-	case "2":
-		fmt.Println("Afficher l'inventaire du personnage")
-	case "3":
-		fmt.Println("Afficher le marché du IA")
-	case "4":
-		fmt.Println("Combattre le IA")
-	case "5":
-		fmt.Println("Quitter le jeu")
-	default:
-		fmt.Println("Veuillez entrez un 1 ou 5")
+	for {
+		fmt.Println("===============")
+		fmt.Println("Menu")
+		fmt.Println("===============")
+		fmt.Println("1 : Afficher les caratéristiques")
+		fmt.Println("2 : Afficher l'inventaire du personnage")
+		fmt.Println("3 : Afficher le marché du IA")
+		fmt.Println("4 : Combattre le IA")
+		fmt.Println("5 : Quitter le jeu")
+		scanner1 := bufio.NewScanner(os.Stdin)
+		scanner1.Scan()
+		menuChoice := scanner1.Text()
+		switch menuChoice {
+		case "1":
+			pc.DisplayInfo()
+		case "2":
+			fmt.Println("Afficher l'inventaire du personnage")
+		case "3":
+			fmt.Println("Afficher le marché du IA")
+		case "4":
+			fmt.Println("Combattre le IA")
+		case "5":
+			fmt.Println("Retour au Menu")
+		default:
+			fmt.Println("Veuillez entrez un 1 ou 5")
 
+		}
 	}
+
 }
 
 func (p Perso) DisplayInfo() {
@@ -90,11 +93,11 @@ func (p Perso) DisplayInfo() {
 	fmt.Println("point de vie :", p.pv)
 	fmt.Println("inventaire :", p.inv)
 
-}
+} 	
 
 // func Menu() {
 // 	fmt.Println("Entrez votre nom")
-// 	scanner := bufio.NewScanner(os.Stdin)
+// 	scanner := bufio. NewScanner(os.Stdin)
 // 	for scanner.Scan() {ol
 // 		fmt.Println("Votre nom est", scanner.Text())
 // 	}

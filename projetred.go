@@ -1,12 +1,10 @@
-package main
+package debut
 
 import (
 	"fmt"
 )
 
-func main() {
-
-func bienvenue(bvn string, ch1 int, ch2 int) {
+func bebut(bvn string, ch1 int, ch2 int) {
 	fmt.Println("Bienvenue sur forhonor Golang!")
 }
 
@@ -120,5 +118,4 @@ func (p *Perso) dead() {
 		fmt.Println("Vous etes mort, vous réaparaissait avec la moitié de vos points de vies")
 		Menu()
 	}
-}
 }

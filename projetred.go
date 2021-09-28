@@ -6,6 +6,10 @@ import (
 
 func main() {
 
+func 
+
+
+
 func bienvenue(bvn string, ch1 int, ch2 int) {
 	fmt.Println("Bienvenue sur forhonor Golang!")
 }
@@ -125,8 +129,10 @@ func (p *Perso) dead() {
 func (p *Perso)marchand() {
     fmt.Println("1 : potion de soin (+50 HP)")
 	p.addinventory("Potion de soin")
-	fmt.Println("2 : potion de poison ( -10 hp par seconde pendant 3 secondes")
+	fmt.Println("2 : potion de poison (-30 HP)")
 	p.addinventory("potion de poison")
+	fmt.Println("3 : Livre de sorts")
+	p.addinventory("Livre de sorts")
 }
 
 func (p *Perso) addinventory(item string) {

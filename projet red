@@ -121,4 +121,28 @@ func (p *Perso) dead() {
 		Menu()
 	}
 }
+
+func (p *Perso)marchand() {
+    fmt.Println("1 : potion de vie (+50 HP)")
+	fmt.Println("2 : potion de poison ( -10 hp par seconde pendant 3 secondes")
+    p.addinventory("Potion de soin")
+}
+
+func (p *Perso) addinventory(item string) {
+	p.inventaire = append(p.inventaire, item)
+   }
+}
+
+func (p *Perso) PoisonPot(item string) {
+	RemoveInventory(p.inventaire, item)
+	for i := 1 ; i <= 3 ; i++ {
+		p.pva - 10 
+		fmt.Println(p.pva,"/",p.pv)
+		time.sleep(1 * Time.seconde)
+		dead()
+	}
+}
+
+func (p *Perso) RemoveInventory(item string) {
+	p.inventaire = Remove(p.inventaire, item)
 }

@@ -6,14 +6,9 @@ import (
 
 func main() {
 
-func bienvenue(bvn string, ch1 int, ch2 int) {
-<<<<<<< HEAD
-
-	fmt.Println("Bienvenue sur forhonor Golang!")
-=======
-	fmt.Println("
-	
-     ______                                                  
+func bvn(bvn string, ch1 int, ch2 int) {
+fmt.Println("
+	______                                                  
     | ___ (_)                                                 
     | |_/ /_  ___ _ ____   _____ _ __  _   _  ___             
     | ___ \ |/ _ \ '_ \ \ / / _ \ '_ \| | | |/ _ \            
@@ -37,7 +32,6 @@ ______ ___________     _   _ _____ _   _  _   _ ___________
 \_|    \___/\_| \_|   \_| |_/\___/\_| \_/\_| \_/\___/\_| \_|
                                                           
                                                           ")
->>>>>>> 9f3246546bd56620179d982b01f06afcb4953d59
 }
 
 type Perso struct {
@@ -62,13 +56,8 @@ func (c *Perso) Init(nom string, class string, inv []string, niveau int, pv int,
 
 func perso() {
 	var p1 Perso
-<<<<<<< HEAD
 	p1.Init("oroshi", "Samurai", []string{" Sabre, bouclier - Sorts : Coup de Poing"}, 1, 1000, 150)
-	fmt.Println("----------------")
-=======
-	p1.Init("oroshi", "Samurai", []string{"Sabre", "Bouclier"}, 1, 1000, 150)
 	fmt.Println("/_____/_____/_____/_____/_____/_____/_____/_____/")
->>>>>>> 9f3246546bd56620179d982b01f06afcb4953d59
 	p1.DisplayInfo()
 	fmt.Println("/_____/_____/_____/_____/_____/_____/_____/_____/")
 	var p2 Perso
@@ -110,11 +99,6 @@ func Bienvenue() {
 	fmt.Println("Bienvenue sur For Honor Golang!")
 	p1.Init("Oroshi", "Samurai", []string{"Sabre", "Bouclier"}, 1, 1000, 150)
 	fmt.Println("----------------")
-=======
-	fmt.Println("Bienvenue sur for honor golang!")
-	p1.Init("oroshi", "Samurai", []string{"sabre", "bouclier"}, 1, 1000, 150)
-	fmt.Println("/_____/_____/_____/_____/_____/_____/_____/_____/")
->>>>>>> 9f3246546bd56620179d982b01f06afcb4953d59
 	fmt.Println("Personnage 1 :\nNom :", p1.nom, "\nClasse :", p1.classe)
 	fmt.Println("/_____/_____/_____/_____/_____/_____/_____/_____/")
 	var p2 Perso

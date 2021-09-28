@@ -136,7 +136,7 @@ func (p *Perso) addinventory(item string) {
 func (p *Perso) PoisonPot(item string) {
 	RemoveInventory(p.inventaire, item)
 	for i := 1 ; i <= 3 ; i++ {
-		p.pva - 10 
+		p.pva - 10 r
 		fmt.Println(p.pva,"/",p.pv)
 		time.sleep(1 * Time.seconde)
 		dead()

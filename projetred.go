@@ -5,10 +5,11 @@ import (
 )
 
 func main() {
-
-func bvn(bvn string, ch1 int, ch2 int) {
-fmt.Println("
-	______                                                  
+}
+func bienvenue(bvn string, ch1 int, ch2 int) {
+	fmt.Println(`
+	
+     ______                                                  
     | ___ (_)                                                 
     | |_/ /_  ___ _ ____   _____ _ __  _   _  ___             
     | ___ \ |/ _ \ '_ \ \ / / _ \ '_ \| | | |/ _ \            
@@ -27,11 +28,11 @@ fmt.Println("
 ______ ___________     _   _ _____ _   _  _   _ ___________ 
 |  ___|  _  | ___ \   | | | |  _  | \ | || \ | |  _  | ___ \
 | |_  | | | | |_/ /   | |_| | | | |  \| ||  \| | | | | |_/ /
-|  _| | | | |    /    |  _  | | | | . ` || . ` | | | |    / 
+|  _| | | | |    /    |  _  | | | | .  || .  | | | |    / 
 | |   \ \_/ / |\ \    | | | \ \_/ / |\  || |\  \ \_/ / |\ \ 
 \_|    \___/\_| \_|   \_| |_/\___/\_| \_/\_| \_/\___/\_| \_|
                                                           
-                                                          ")
+                                                          `)
 }
 
 type Perso struct {
@@ -95,7 +96,6 @@ func (p *Perso) takePot() {
 
 func Bienvenue() {
 	var p1 Perso
-<<<<<<< HEAD
 	fmt.Println("Bienvenue sur For Honor Golang!")
 	p1.Init("Oroshi", "Samurai", []string{"Sabre", "Bouclier"}, 1, 1000, 150)
 	fmt.Println("----------------")
@@ -149,9 +149,8 @@ func (p *Perso) dead() {
 		Menu()
 	}
 }
-
 func (p *Perso)marchand() {
-	if choice == 2
+	if choice == 2 {
     fmt.Println("1 : potion de soin (+50 HP)")
 	fmt.Println("2 : potion de poison ( -10 hp par seconde pendant 3 secondes")
 	fmt.Println("si le joueur tape 1")
@@ -165,7 +164,7 @@ func (p *Perso)marchand() {
 func (p *Perso) addinventory(item string) {
 	p.inv = append(p.inv, item)
 }
-
+   
 func (p *Perso) PoisonPot(item string) {
 	RemoveInventory(p.inventaire, item)
 	for i := 1 ; i <= 3 ; i++ {

@@ -124,6 +124,7 @@ func (p *Perso) dead() {
 		Menu()
 	}
 }
+
 func (p *Perso) marchand() {
 	fmt.Println("1 : potion de soin (+50 HP)")
 	fmt.Println("2 : potion de poison ( -10 hp par seconde pendant 3 secondes")
@@ -138,3 +139,9 @@ func (p *Perso) marchand() {
 func (p *Perso) addinventory(item string) {
 	p.inv = append(p.inv, item)
 }
+
+/*func (P *Perso) spellbook(skill []string) {
+	append(p.skill, "Boule de feu")
+}
+probleme a p.skill
+*/

@@ -1,38 +1,13 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"os"
 )
 
-func main() {
-}
-func bienvenue(bvn string, ch1 int, ch2 int) {
-	fmt.Println(`
-	
-     ______                                                  
-    | ___ (_)                                                 
-    | |_/ /_  ___ _ ____   _____ _ __  _   _  ___             
-    | ___ \ |/ _ \ '_ \ \ / / _ \ '_ \| | | |/ _ \            
-    | |_/ / |  __/ | | \ V /  __/ | | | |_| |  __/            
-    \____/|_|\___|_| |_|\_/ \___|_| |_|\__,_|\___|            
-                                                          
-                                                          
-                                                          
-                                                          
-                    ___ _   _ _ __                          
-                   / __| | | | '__|                         
-                   \__ \ |_| | |                            
-                   |___/\__,_|_|                            
-                                                          
-                                                          
-______ ___________     _   _ _____ _   _  _   _ ___________ 
-|  ___|  _  | ___ \   | | | |  _  | \ | || \ | |  _  | ___ \
-| |_  | | | | |_/ /   | |_| | | | |  \| ||  \| | | | | |_/ /
-|  _| | | | |    /    |  _  | | | | .  || .  | | | |    / 
-| |   \ \_/ / |\ \    | | | \ \_/ / |\  || |\  \ \_/ / |\ \ 
-\_|    \___/\_| \_|   \_| |_/\___/\_| \_/\_| \_/\___/\_| \_|
-                                                          
-                                                          `)
+func magee(bvn string, ch1 int, ch2 int) {
+	fmt.Println("Bienvenue sur For honnor GOLANG")
 }
 
 type Perso struct {
@@ -55,18 +30,63 @@ func (c *Perso) Init(nom string, class string, inv []string, niveau int, pv int,
 	c.skill = skill
 }
 
-func perso() {
+func main() {
 	var p1 Perso
-	p1.Init("oroshi", "Samurai", []string{" Sabre, bouclier - Sorts : Coup de Poing"}, 1, 1000, 150, []string{})
-	fmt.Println("/_____/_____/_____/_____/_____/_____/_____/_____/")
-	p1.DisplayInfo()
-	fmt.Println("/_____/_____/_____/_____/_____/_____/_____/_____/")
+	fmt.Println("Bienvenue sur for honor golang!")
+	p1.Init("oroshi", "Samurai", []string{" Sabre, bouclier"}, 1, 1000, 150, []string{"coup de poing"})
+	fmt.Println("===============")
+	fmt.Println("Personnage 1 :\nNom :", p1.nom, "\nClasse :", p1.classe)
+	fmt.Println("===============")
 	var p2 Perso
-	p2.Init("raider", "viking", []string{" Hache,", "Potion de soin - Sorts : Coup de Poing"}, 1, 1500, 300, []string{})
-	p2.DisplayInfo()
-	fmt.Println("")
+	p2.Init("raider", "viking", []string{" Hache,", "Potion de soin"}, 1, 1500, 300, []string{"coup de poing"})
+	fmt.Println("Personnage 2 :\nNom :", p2.nom, "\nClasse", p2.classe)
+	fmt.Println("===============")
+	fmt.Println("Choisissez votre personnage :")
+	var choice string
+	scanner := bufio.NewScanner(os.Stdin)
+	scanner.Scan()
+	choice = scanner.Text()
+	var pc Perso
+	if choice == "1" {
+		pc.Init(p1.nom, p1.classe, p1.inv, p1.niveau, p1.pv, p1.pva, p1.skill)
+		fmt.Println(pc)
+	} else if choice == "2" {
+		pc.Init(p2.nom, p2.classe, p2.inv, p2.niveau, p2.pv, p2.pva, p2.skill)
+		fmt.Println(pc)
+	} else {
+		fmt.Println("Veuillez tapez 1 ou 2")
+	}
+	fmt.Println("Vous avez choisi le personnage :")
+	fmt.Println("Nom :", pc.nom, "\nClasse :", pc.classe, "skill:", pc.skill)
+	fmt.Println("===============")
+	fmt.Println("Menu")
+	fmt.Println("===============")
+	fmt.Println("1 : Afficher les caratéristiques")
+	fmt.Println("2 : Afficher l'inventaire du personnage")
+	fmt.Println("3 : Afficher le marché du IA")
+	fmt.Println("4 : Combattre le IA")
+	fmt.Println("5 : Quitter le jeu")
+	scanner1 := bufio.NewScanner(os.Stdin)
+	scanner1.Scan()
+	menuChoice := scanner1.Text()
+	switch menuChoice {
+	case "1":
+		pc.DisplayInfo()
+	case "2":
+		fmt.Println("Afficher l'inventaire du personnage")
+	case "3":
+		fmt.Println("Afficher le marcher du IA")
+		pc.marchand()
+	case "4":
+		fmt.Println("Afficher les skills")
+	case "5":
+		fmt.Println("Combatre le IA")
+	case "6":
+		fmt.Println("Quitter le jeux")
+	default:
+		fmt.Println("Veuillez entrez un chiffre entre 1 et 6")
+	}
 }
-
 func (p Perso) DisplayInfo() {
 	fmt.Println("Nom :", p.nom)
 	fmt.Println("classe :", p.classe)
@@ -74,7 +94,7 @@ func (p Perso) DisplayInfo() {
 	fmt.Println("point de vie actuel :", p.pva)
 	fmt.Println("point de vie :", p.pv)
 	fmt.Println("inventaire :", p.inv)
-	fmt.Println("Sorts :", p.skill)
+	fmt.Println("skills :", p.skill)
 }
 
 func (p Perso) DisplayInventory() {
@@ -91,55 +111,6 @@ func (p *Perso) takePot() {
 			p.pv += 50
 			p.inv[len(p.inv)-1] = ""
 		}
-	}
-}
-
-func Bienvenue() {
-	var p1 Perso
-	fmt.Println("Bienvenue sur For Honor Golang!")
-	p1.Init("Oroshi", "Samurai", []string{"Sabre", "Bouclier"}, 1, 1000, 150, []string{})
-	fmt.Println("----------------")
-	fmt.Println("Personnage 1 :\nNom :", p1.nom, "\nClasse :", p1.classe)
-	fmt.Println("/_____/_____/_____/_____/_____/_____/_____/_____/")
-	var p2 Perso
-	p2.Init("raider", "viking", []string{"hache", "Potion de soin"}, 1, 1500, 300, []string{})
-	fmt.Println("Personnage 2 :\nNom :", p2.nom, "\nClasse", p2.classe)
-	fmt.Println("/_____/_____/_____/_____/_____/_____/_____/_____/")
-	choice := 1
-	var pc Perso
-	if choice == 1 {
-		pc.Init(p1.nom, p1.classe, p1.inv, p1.niveau, p1.pv, p1.pva, p1.skill)
-	} else if choice == 2 {
-		pc.Init(p2.nom, p2.classe, p2.inv, p2.niveau, p2.pv, p2.pva, p2.skill)
-	}
-	fmt.Println("Vous avez choisi le personnage :")
-	fmt.Println("Nom :", pc.nom, "\nClasse :", pc.classe)
-	fmt.Println("/_____/_____/_____/_____/_____/_____/_____/_____/")
-	fmt.Println("Menu")
-	fmt.Println("/_____/_____/_____/_____/_____/_____/_____/_____/")
-	fmt.Println("1 : Afficher les caratÃ©ristiques")
-	fmt.Println("2 : Afficher l'inventaire du personnage")
-	fmt.Println("3 : Afficher le marcher du IA")
-	fmt.Println("5 : Afficher les Skills")
-	fmt.Println("6 : Combatre le IA")
-	fmt.Println("7 : Quitter le jeux")
-	menuChoice := 1
-	switch menuChoice {
-	case 1:
-		pc.DisplayInfo()
-	case 2:
-		fmt.Println("Afficher l'inventaire du personnage")
-	case 3:
-		fmt.Println("Afficher le marcher du IA")
-		pc.marchand()
-	case 4:
-		fmt.Println("Afficher les Skils")
-	case 5:
-		fmt.Println("Combatre le IA")
-	default:
-		fmt.Println("Veuillez entrez un chiffre entre 1 et 6")
-	case 6:
-		fmt.Println("Quitter le jeux")
 	}
 }
 

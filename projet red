@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
+	"bufio"
 )
 
-func main() {
 func bienvenue(bvn string, ch1 int, ch2 int) {
 	fmt.Println("Bienvenue sur forhonor Golang!")
 }
@@ -27,7 +27,7 @@ func (c *Perso) Init(nom string, class string, inv []string, niveau int, pv int,
 	c.inv = inv
 }
 
-func perso() {
+func main() {
 	var p1 Perso
 	p1.Init("oroshi", "Samurai", []string{"", ""}, 1, 1000, 150)
 	fmt.Println("----------------")

@@ -42,27 +42,27 @@ type Perso struct {
 	pv     int
 	pva    int
 	inv    []string
-	skill []string 
+	skill  []string
 }
 
-func (c *Perso) Init(nom string, class string, inv []string, niveau int, pv int, pva int) {
+func (c *Perso) Init(nom string, class string, inv []string, niveau int, pv int, pva int, skill []string) {
 	c.nom = nom
 	c.classe = class
 	c.niveau = niveau
 	c.pv = pv
 	c.pva = pva
 	c.inv = inv
-	c.skill = skill 
+	c.skill = skill
 }
 
 func perso() {
 	var p1 Perso
-	p1.Init("oroshi", "Samurai", []string{" Sabre, bouclier - Sorts : Coup de Poing"}, 1, 1000, 150)
+	p1.Init("oroshi", "Samurai", []string{" Sabre, bouclier, Sorts : Coup de Poing"}, 1, 1000, 150, []string{})
 	fmt.Println("/_____/_____/_____/_____/_____/_____/_____/_____/")
 	p1.DisplayInfo()
 	fmt.Println("/_____/_____/_____/_____/_____/_____/_____/_____/")
 	var p2 Perso
-	p2.Init("raider", "viking", []string{" Hache,", "Potion de soin - Sorts : Coup de Poing"}, 1, 1500, 300)
+	p2.Init("raider", "viking", []string{" Hache,", "Potion de soin, Sorts : Coup de Poing"}, 1, 1500, 300, []string{})
 	p2.DisplayInfo()
 	fmt.Println("")
 }
@@ -97,20 +97,20 @@ func (p *Perso) takePot() {
 func Bienvenue() {
 	var p1 Perso
 	fmt.Println("Bienvenue sur For Honor Golang!")
-	p1.Init("Oroshi", "Samurai", []string{"Sabre", "Bouclier"}, 1, 1000, 150)
+	p1.Init("Oroshi", "Samurai", []string{"Sabre", "Bouclier"}, 1, 1000, 150, []string{})
 	fmt.Println("----------------")
 	fmt.Println("Personnage 1 :\nNom :", p1.nom, "\nClasse :", p1.classe)
 	fmt.Println("/_____/_____/_____/_____/_____/_____/_____/_____/")
 	var p2 Perso
-	p2.Init("raider", "viking", []string{"hache", "Potion de soin"}, 1, 1500, 300)
+	p2.Init("raider", "viking", []string{"Hache", "Potion de soin"}, 1, 1500, 300, []string{})
 	fmt.Println("Personnage 2 :\nNom :", p2.nom, "\nClasse", p2.classe)
 	fmt.Println("/_____/_____/_____/_____/_____/_____/_____/_____/")
 	choice := 1
 	var pc Perso
 	if choice == 1 {
-		pc.Init(p1.nom, p1.classe, p1.inv, p1.niveau, p1.pv, p1.pva)
+		pc.Init(p1.nom, p1.classe, p1.inv, p1.niveau, p1.pv, p1.pva, p1.skill)
 	} else if choice == 2 {
-		pc.Init(p2.nom, p2.classe, p2.inv, p2.niveau, p2.pv, p2.pva)
+		pc.Init(p2.nom, p2.classe, p2.inv, p2.niveau, p2.pv, p2.pva, p2.skill)
 	}
 	fmt.Println("Vous avez choisi le personnage :")
 	fmt.Println("Nom :", pc.nom, "\nClasse :", pc.classe)
@@ -130,6 +130,7 @@ func Bienvenue() {
 		fmt.Println("Afficher l'inventaire du personnage")
 	case 3:
 		fmt.Println("Afficher le marcher du IA")
+		pc.Marchand()
 	case 4:
 		fmt.Println("Combatre le IA")
 	default:
@@ -141,17 +142,8 @@ func Bienvenue() {
 
 func Menu() {
 }
-
-func (p *Perso) dead() {
-	if p.pva <= 0 {
-		p.pva = p.pv / 2
-		fmt.Println("Vous etes mort, vous réaparaissait avec la moitié de vos points de vies")
-		Menu()
-	}
-}
-func (p *Perso)marchand() {
-	if choice == 2 {
-    fmt.Println("1 : potion de soin (+50 HP)")
+func (p *Perso) Marchand() {
+	fmt.Println("1 : potion de soin (+50 HP)")
 	fmt.Println("2 : potion de poison ( -10 hp par seconde pendant 3 secondes")
 	fmt.Println("si le joueur tape 1")
 	p.addinventory("potion de soin ")
@@ -164,21 +156,30 @@ func (p *Perso)marchand() {
 func (p *Perso) addinventory(item string) {
 	p.inv = append(p.inv, item)
 }
-   
+
 func (p *Perso) PoisonPot(item string) {
-	RemoveInventory(p.inventaire, item)
-	for i := 1 ; i <= 3 ; i++ {
-		p.pva - 10 r
-		fmt.Println(p.pva,"/",p.pv)
-		time.sleep(1 * Time.seconde)
-		dead()
+	RemoveInventory(p.inv, item)
+	for i := 1; i <= 3; i++ {
+		p.pva - 10
+		fmt.Println(p.pva, "/", p.pv)
+		time.sleep(1 * time.seconde)
+		Dead()
 	}
 }
 
 func (p *Perso) RemoveInventory(item string) {
-	p.inventaire = Remove(p.inventaire, item)
+	p.inv = Remove(p.inventaire, item)
 }
-
-func (*P Perso) spellbook(skill []string){
-append(c.skill, "Boule de feu" )
+func Menu(){
+ 
+func (p *Perso) Dead() {
+	if p.pva <= 0 {
+		p.pva = p.pv / 2
+		fmt.Println("Vous etes mort, vous réaparaissait avec la moitié de vos points de vies")
+		Menu()
+	}
+}
+}
+func (P *Perso) spellbook(skill []string) {
+	append(p.skill, "Boule de feu")
 }

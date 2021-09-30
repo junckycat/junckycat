@@ -109,7 +109,7 @@ func (p Perso) DisplayInventory() {
 		fmt.Println("inventaire vide")
 	}
 	for i := 0; i < len(p.inv); i++ {
-		fmt.Println("->", p.inv[i], "x1")
+		fmt.Println("->", p.inv[i])
 	}
 
 }
@@ -117,7 +117,7 @@ func (p *Perso) takePot() {
 	for _, lettre := range p.inv {
 		if lettre == "potion de soin" && p.pv <= p.pv-50 {
 			p.pv += 50
-			p.inv[len(p.inv)-1] = ""
+			p.inv[len(p.inv)-1] = "x1"
 		}
 	}
 }

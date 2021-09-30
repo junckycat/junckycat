@@ -7,7 +7,22 @@ import (
 )
 
 func magee(bvn string, ch1 int, ch2 int) {
-	fmt.Println("Bienvenue sur For honnor GOLANG")
+	fmt.Println(`
+	 ______________________________
+	/                            
+   |   |      ----             ---- |.
+	 |       ---     --------       |.
+	   |      -- BIENVENUE	--		|.
+	   |	------   SUR	-------	|.
+	   |	  -- FOR HONNOR		---	|.
+	   |	--	EN GOLANG   --      |.
+	   |          -------           |.
+	   |   --    ----   --      --  |.
+	   |                            |.
+	   |    ---       ------   -    |.
+	   |   _________________________|___
+  	   |  /                            /.
+    	\_____________________________/.		`)
 }
 
 type Perso struct {
@@ -36,8 +51,23 @@ func (c *Perso) Init(nom string, class string, inv []string, invMax int, niveau 
 
 func main() {
 	var p1 Perso
-	fmt.Println("		Bienvenue sur for honor golang!")
-	p1.Init("Oroshi", "Samurai", []string{" Sabre, bouclier"}, 10, 1, 1000, 150, []string{"coup de poing"}, 1000)
+	fmt.Println(`	
+	 ______________________________
+	/                              
+    |      ----                      ---|.
+	 |       ---     --------       |.
+	   |      -- BIENVENUE	      --|.
+	   |	------   SUR	      --|.
+	   |	  -- FOR HONNOR ---	|.
+	   |	--	EN GOLANG   --  |.
+	   |          -------           |.
+	   |   --    ----   --      --  |.
+	   |                            |.
+	   |    ---       ------   -    |.
+	   |   _________________________|_
+  	   |  /                          /.
+    	\____________________________/.		`)
+	p1.Init("Oroshi", "Samurai", []string{" Sabre, bouclier"}, 10, 1, 1000, 150, []string{"coup de poing"}, 100)
 	fmt.Println("		")
 	fmt.Println("		================")
 	fmt.Println("		")
@@ -135,7 +165,6 @@ func (p Perso) DisplayInventory() {
 	for i := 0; i < len(p.inv); i++ {
 		fmt.Println("->", p.inv[i])
 	}
-
 }
 func (p *Perso) takePot() {
 	for _, lettre := range p.inv {

@@ -8,6 +8,7 @@ import (
 	"time"
 )
 
+<<<<<<< HEAD
 const (
 	cuirDeSanglier = "Cuir de Sanglier"
 	plumeDeCorbarc = "Plume de Corbarc"
@@ -20,6 +21,26 @@ var pot2 int
 var menu int
 var retour int
 var pc Personage
+=======
+func magee(bvn string, ch1 int, ch2 int) {
+	fmt.Println(`
+	 ______________________________
+	/                            
+   |   |      ----             ---- |.
+	 |       ---     --------       |.
+	   |      -- BIENVENUE	--		|.
+	   |	------   SUR	-------	|.
+	   |	  -- FOR HONNOR		---	|.
+	   |	--	EN GOLANG   --      |.
+	   |          -------           |.
+	   |   --    ----   --      --  |.
+	   |                            |.
+	   |    ---       ------   -    |.
+	   |   _________________________|___
+  	   |  /                            /.
+    	\_____________________________/.		`)
+}
+>>>>>>> beabff437adcd376774f093330b99131f3cb8068
 
 type Personage struct {
 	nom    string
@@ -44,6 +65,7 @@ type Barbare struct {
 	attack int
 }
 
+<<<<<<< HEAD
 func mainn() {
 	var p1 Personage
 
@@ -61,6 +83,9 @@ func magee(bvn string, ch1 int, ch2 int) {
 	fmt.Println()
 }
 func (c *Personage) Init(nom string, class string, inv []string, invMax int, niveau int, pv int, pva int, skill []string, coins int) {
+=======
+func (c *Perso) Init(nom string, class string, inv []string, invMax int, niveau int, pv int, pva int, skill []string, coins int) {
+>>>>>>> beabff437adcd376774f093330b99131f3cb8068
 	c.nom = nom
 	c.classe = class
 	c.niveau = niveau
@@ -73,6 +98,7 @@ func (c *Personage) Init(nom string, class string, inv []string, invMax int, niv
 }
 
 func main() {
+<<<<<<< HEAD
 	var p1 Personage
 	fmt.Println(`	
 	#######  #####   ######            ##   ##    #####   ##   ##  ##   ##   #####   ######
@@ -106,10 +132,44 @@ func main() {
 	fmt.Println("		")
 	fmt.Println("		")
 	fmt.Println("-----------------------------")
+=======
+	var p1 Perso
+	fmt.Println(`	
+	 ______________________________
+	/                              
+    |      ----                      ---|.
+	 |       ---     --------       |.
+	   |      -- BIENVENUE	      --|.
+	   |	------   SUR	      --|.
+	   |	  -- FOR HONNOR ---	|.
+	   |	--	EN GOLANG   --  |.
+	   |          -------           |.
+	   |   --    ----   --      --  |.
+	   |                            |.
+	   |    ---       ------   -    |.
+	   |   _________________________|_
+  	   |  /                          /.
+    	\____________________________/.		`)
+	p1.Init("Oroshi", "Samurai", []string{" Sabre, bouclier"}, 10, 1, 1000, 150, []string{"coup de poing"}, 100)
+	fmt.Println("		")
+	fmt.Println("		================")
+	fmt.Println("		")
+	fmt.Println("	        Personnage numéro 1 \n		Nom :", p1.nom, "\n		Classe :", p1.classe, "\n 	        Niveau :", p1.niveau)
+	fmt.Println("		")
+	fmt.Println("		================")
+	var p2 Perso
+	p2.Init("Raider", "Viking", []string{" Hache, potion de soin"}, 10, 1, 1500, 300, []string{"coup de poing"}, 100)
+	fmt.Println("		")
+	fmt.Println("		Personnage numéro 2 \n		Nom :", p2.nom, "\n		Classe :", p2.classe, "\n 	        Niveau :", p2.niveau)
+	fmt.Println("		")
+	fmt.Println("		================")
+	fmt.Println("		")
+>>>>>>> beabff437adcd376774f093330b99131f3cb8068
 	fmt.Println("Choisissez votre personnage :")
 	fmt.Println("-----------------------------")
 	var choice string
 	scanner := bufio.NewScanner(os.Stdin)
+<<<<<<< HEAD
 	for {
 		scanner.Scan()
 		choice = scanner.Text()
@@ -124,6 +184,19 @@ func main() {
 		} else {
 			fmt.Println("Veuillez tapez 1 ou 2")
 		}
+=======
+	scanner.Scan()
+	choice = scanner.Text()
+	var pc Perso
+	if choice == "1" {
+		pc.Init(p1.nom, p1.classe, p1.inv, p1.invMax, p1.niveau, p1.pv, p1.pva, p1.skill, p1.coins)
+		fmt.Println(pc.nom)
+	} else if choice == "2" {
+		pc.Init(p2.nom, p2.classe, p2.inv, p2.invMax, p2.niveau, p2.pv, p2.pva, p2.skill, p1.coins)
+		fmt.Println(pc)
+	} else {
+		fmt.Println("Veuillez tapez 1 ou 2")
+>>>>>>> beabff437adcd376774f093330b99131f3cb8068
 	}
 	fmt.Println("Vous avez choisi le personnage :")
 	fmt.Println("Nom :", pc.nom, "\nClasse :", pc.classe, "skill:", pc.skill)
@@ -146,6 +219,7 @@ func main() {
 		fmt.Println("				")
 		fmt.Println("		==================================")
 		fmt.Println("				")
+<<<<<<< HEAD
 		fmt.Println("		4 : Parler au forgeron")
 		fmt.Println("				")
 		fmt.Println("		==================================")
@@ -172,6 +246,18 @@ func main() {
 		fmt.Scanln(&menuchoice)
 
 		switch menuchoice {
+=======
+		fmt.Println("		4 : Combattre le IA")
+		fmt.Println("				")
+		fmt.Println("		==================================")
+		fmt.Println("				")
+		fmt.Println("		5 : Quitter le jeu")
+		fmt.Println("				")
+		fmt.Println("		==================================")
+		scanner1.Scan()
+		menuChoice := scanner1.Text()
+		switch menuChoice {
+>>>>>>> beabff437adcd376774f093330b99131f3cb8068
 		case "1":
 			pc.DisplayInfo()
 
@@ -180,7 +266,11 @@ func main() {
 			pc.DisplayInventory()
 		case "3":
 			fmt.Println("Rentrer dans la Taverne")
+<<<<<<< HEAD
 			pc.Marchand()
+=======
+			pc.marchand()
+>>>>>>> beabff437adcd376774f093330b99131f3cb8068
 		case "4":
 			pc.Forgeron()
 		case "5":
@@ -225,6 +315,7 @@ func (p *Personage) DisplayInventory() {
 		fmt.Println("inventaire vide")
 	}
 	for i := 0; i < len(p.inv); i++ {
+<<<<<<< HEAD
 		fmt.Println(i, "->", p.inv[i])
 
 	}
@@ -235,6 +326,9 @@ func (p *Personage) AddInventory(item string, price int) {
 		p.inv = append(p.inv, item)
 	} else {
 		fmt.Println("Tu n'a pas assez d'argent pour acheter cet objet")
+=======
+		fmt.Println("->", p.inv[i])
+>>>>>>> beabff437adcd376774f093330b99131f3cb8068
 	}
 }
 func (p *Personage) RemoveInventory(item string) {
@@ -286,6 +380,7 @@ func (p *Personage) PoisonPot() {
 		}
 	}
 }
+<<<<<<< HEAD
 
 func (pc *Personage) Marchand() {
 	scanner1 := bufio.NewScanner(os.Stdin)
@@ -326,32 +421,79 @@ func (pc *Personage) Marchand() {
 				pc.Marchand()
 			} else if pc.coins <= 10 {
 				fmt.Println("Vous n'avez pas assez d'argents, Travaillez")
+=======
+func (p *Perso) marchand() {
+
+	scanner1 := bufio.NewScanner(os.Stdin)
+	fmt.Println("                    ")
+	fmt.Println("======Potions=======")
+	fmt.Println("                    ")
+	fmt.Println("'1': Potion de soin (10 coins)")
+	fmt.Println("'2': Potion de poison (10 coins)")
+	fmt.Println("                    ")
+	fmt.Println("======Sortileges=======")
+	fmt.Println("                    ")
+	fmt.Println("'3': Boule de Feu (25 coins)")
+	fmt.Println("                    ")
+	fmt.Println("======Chasseur=======")
+	fmt.Println("                    ")
+	fmt.Println("'4':  Fourrure de Loup (25 coins)")
+	fmt.Println("'5':  Cuir de Sanglier (25 coins)")
+	fmt.Println("'6':  Plume de Corbeau (25 coins)")
+	fmt.Println("'7':  Peau de Troll (25 coins)")
+	fmt.Println("                    ")
+	fmt.Println("==========================")
+	scanner1.Scan()
+	choice := scanner1.Text()
+	if choice == "1" {
+		if p.coins >= 10 {
+			if p.addinventory("Potion de soin") {
+				fmt.Println("Vous avez acheté une potion de soin")
+				p.coins -= 10
+>>>>>>> beabff437adcd376774f093330b99131f3cb8068
 			}
 		}
 	}
 	if choice == "2" {
+<<<<<<< HEAD
 		if pc.coins >= 10 {
 			if pc.addinventory("Potion de Poison") {
 				fmt.Println("Vous avez acheté une potion de Poison")
 				pc.coins -= 10
 				pc.Marchand()
 			} else if pc.coins <= 10 {
+=======
+		if p.coins >= 10 {
+			if p.addinventory("Potion de Poison") {
+				fmt.Println("Vous avez acheté une potion de Poison")
+				p.coins -= 10
+			} else {
+>>>>>>> beabff437adcd376774f093330b99131f3cb8068
 				fmt.Println("Vous n'avez pas assez d'argents, Travaillez")
 			}
 		}
 	}
 	if choice == "3" {
+<<<<<<< HEAD
 		if pc.coins >= 25 {
 			if pc.addinventory("Sort : Boule de feu") {
 				fmt.Println("Vous avez Appris un sort 'Boule de feu'")
 				pc.coins -= 25
 				pc.Marchand()
 			} else if pc.coins <= 25 {
+=======
+		if p.coins >= 25 {
+			if p.addinventory("Sort : Boule de feu") {
+				fmt.Println("Vous avez Appris un sort 'Boule de feu'")
+				p.coins -= 25
+			} else {
+>>>>>>> beabff437adcd376774f093330b99131f3cb8068
 				fmt.Println("Vous n'avez pas assez d'argents, Travaillez")
 			}
 		}
 	}
 	if choice == "4" {
+<<<<<<< HEAD
 		if pc.coins >= 25 {
 			fmt.Println("Vous avez acheté une fourrure de Loup")
 			pc.addinventory(fourrureDeloup)
@@ -359,6 +501,45 @@ func (pc *Personage) Marchand() {
 			pc.Marchand()
 		} else if pc.coins <= 25 {
 			fmt.Println("Vous n'avez pas assez d'argents, Travaillez")
+=======
+		if p.coins >= 25 {
+			fmt.Println("Vous avez acheté une fourrure de Loup")
+			p.addinventory("Fourrure de Loup")
+			p.coins -= 25
+
+		} else {
+			fmt.Println("Vous n'avez pas assez d'argents, travaillez")
+		}
+	}
+	if choice == "5" {
+		if p.coins >= 25 {
+			if p.addinventory("Cuir de sanglier") {
+				fmt.Println("Vous avez acheté un Cuir de sanglier")
+				p.coins -= 25
+			} else {
+				fmt.Println("Vous n'avez pas assez d'argents, Travaillez")
+			}
+		}
+	}
+	if choice == "6" {
+		if p.coins >= 25 {
+			if p.addinventory("Plume de Corbeau") {
+				fmt.Println("Vous avez acheté une Plume de Corbeau")
+				p.coins -= 25
+			} else {
+				fmt.Println("Vous n'avez pas assez d'argents, Travaillez")
+			}
+		}
+	}
+	if choice == "7" {
+		if p.coins >= 25 {
+			if p.addinventory("Peau de Troll") {
+				fmt.Println("Vous avez acheté une Peau de Troll")
+				p.coins -= 25
+			} else {
+				fmt.Println("Vous n'avez pas assez d'argents, Travaillez")
+			}
+>>>>>>> beabff437adcd376774f093330b99131f3cb8068
 		}
 	}
 	if choice == "5" {
@@ -432,6 +613,7 @@ func (p *Personage) addinventory(item string) bool { // ajouez a linventaire//
 		return true
 	}
 }
+<<<<<<< HEAD
 func (p *Personage) spellbook(skill []string) {
 	p.skill = append(p.skill, "Boule de feu")
 }
@@ -680,6 +862,19 @@ func (p *Personage) TrainingFight() {
 		}
 	}
 
+=======
+func (p *Perso) addinventory(item string) bool {
+	if len(p.inv) > 10 {
+		fmt.Println("Vous n'avez plus assez de place dans votre sac.")
+		return false
+	} else {
+		p.inv = append(p.inv, item)
+		return true
+	}
+}
+func (p *Perso) spellbook(skill []string) {
+	p.skill = append(p.skill, "Boule de feu")
+>>>>>>> beabff437adcd376774f093330b99131f3cb8068
 }
 
 func (p *Personage) TheFirst() {
@@ -799,4 +994,6 @@ func (p *Personage) TheFourth() {
 		}
 		time.Sleep(3 * time.Second)
 	}
+}
+func (p *Perso) InvMax(inv int) {
 }
